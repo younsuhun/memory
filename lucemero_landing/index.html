@@ -3,10 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>진화심리학으로 쓰는 자기 이해 | 사전 예약</title>
-    <meta name="description" content="남과 비교하며 괴로워하는 당신, 진화심리학이 알려주는 자기 이해 가이드와 노션 템플릿으로 시작하세요.">
-    <link rel="stylesheet" href="style.css">
+    <title>진화심리학/뇌과학 + 내적 글쓰기 | 가이드북</title>
+    <meta name="description" content="과생각과 인간관계 갈등으로 고민하는 당신, 진화심리학/뇌과학 기반의 안전한 AI 글쓰기로 시작하세요.">
+    <link rel="stylesheet" href="style.css?v=2">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <style>
+        /* Base styles already in style.css */
+        
+        section { padding: 80px 24px; }
+        .section-title { text-align: center; margin-bottom: 48px; }
+        .section-title h2 { font-size: 2.5rem; line-height: 1.3; color: var(--text-primary); }
+        .highlight { background: linear-gradient(90deg, var(--accent-color), #b04c35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* 1. Hero */
+        .hero { padding-top: 60px; min-height: 80vh; }
+        
+        /* 2. Pain Points */
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .pain-card { background: rgba(0,0,0,0.03); padding: 32px; border-radius: 16px; border-left: 4px solid var(--accent-color); }
+        .pain-card h3 { color: var(--accent-color); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        
+        /* 3. Mini CTA */
+        .mini-cta { background: linear-gradient(135deg, rgba(212, 106, 78, 0.1), rgba(0,0,0,0)); text-align: center; border-top: 1px solid rgba(212, 106, 78, 0.2); border-bottom: 1px solid rgba(212, 106, 78, 0.2); }
+        
+        /* 4. Author Trust */
+        .author-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
+        .stat-box { background: rgba(0,0,0,0.03); padding: 24px; border-radius: 12px; text-align: center; }
+        .stat-num { font-size: 2rem; font-weight: 800; color: var(--accent-color); margin-bottom: 8px; }
+        
+        /* 5. Differentiator */
+        .diff-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        @media (min-width: 768px) { .diff-grid { grid-template-columns: 1fr 1fr; } }
+        .security-alert { border: 1px dashed var(--accent-color); background: rgba(212, 106, 78, 0.05); padding: 24px; border-radius: 12px; margin-top: 24px; }
+        
+        /* 6. TOC */
+        .toc-list { display: flex; flex-direction: column; gap: 16px; }
+        .toc-item { padding: 24px; background: rgba(0,0,0,0.02); border-radius: 12px; display: flex; gap: 24px; align-items: center; }
+        .toc-num { font-size: 2.5rem; font-weight: 900; color: rgba(0,0,0,0.08); width: 60px; }
+        
+        /* 7. Reviews */
+        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .review-card { padding: 32px; background: rgba(0,0,0,0.03); border-radius: 16px; position: relative; }
+        .review-card::before { content: '"'; font-size: 4rem; color: rgba(212, 106, 78, 0.2); position: absolute; top: 10px; left: 20px; font-family: serif; }
+        .stars { color: #d46a4e; margin-bottom: 12px; font-size: 1.2rem; }
+        
+        /* 8. Lead Capture */
+        .price-box { text-align: center; padding: 48px; border: 2px solid var(--accent-color); background: rgba(212,106,78,0.03); border-radius: 16px; margin: 0 auto; max-width: 600px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+        
+        /* 9. FAQ */
+        .faq-item { background: rgba(0,0,0,0.02); margin-bottom: 16px; border-radius: 8px; padding: 24px; border: 1px solid rgba(0,0,0,0.05); }
+        .faq-q { font-weight: 700; color: var(--accent-color); margin-bottom: 8px; display: flex; gap: 12px; }
+        .faq-a { color: var(--text-secondary); padding-left: 28px; line-height: 1.7; }
+        
+        /* 10. Final CTA */
+        .final-cta { text-align: center; background: #efebe0; padding: 100px 24px; border-top: 1px solid rgba(0,0,0,0.05); }
+        .floating-button { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 100; width: 90%; max-width: 400px; box-shadow: 0 10px 30px rgba(212,106,78,0.3); animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
+
+        /* General Utilities */
+        .text-center { text-align: center; }
+        .w-100 { width: 100%; }
+        .mb-2 { margin-bottom: 16px; }
+        .mb-4 { margin-bottom: 32px; }
+    </style>
 </head>
 <body>
     <div class="background-glow"></div>
@@ -14,86 +73,259 @@
     
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">Lucemero.</div>
-            <div class="author">윤산 진화로 세상 읽기</div>
+            <div class="logo" style="color: var(--text-primary);">진화와 글쓰기.</div>
+            <div class="author">저자 윤수훈</div>
         </div>
     </nav>
 
     <main>
+        <!-- 1. Hero Section -->
         <section class="hero container">
             <div class="hero-content">
-                <div class="badge">🚀 8월 정식 출시 예정</div>
-                <h1 class="title">
-                    "나는 자기 객관화를 잘해"<br>
-                    <span class="highlight">이 말 하는 순간 이미 한 발 늦었다.</span>
+                <div class="badge" style="margin-bottom: 24px; display: inline-block;">💡 내 마음을 해독하는 과학적 접근</div>
+                <h1 class="title" style="font-size: 3.2rem;">
+                    자책은 당신의 잘못이 아니라<br><span class="highlight">뇌의 '생존 본능'</span>입니다
                 </h1>
                 <p class="subtitle">
-                    인간은 남을 잘 속이기 위해 먼저 자신을 속이도록 진화했습니다.<br>
-                    진화심리학과 뇌과학 기반의 <strong>'내적 글쓰기 노션 템플릿 + 가이드북'</strong>으로<br>
-                    진짜 나를 마주하는 연습을 시작하세요.
+                    100권의 자기계발서가 주지 못한 명쾌한 해답.<br>
+                    <strong>진화심리학과 뇌과학, 그리고 가장 안전한 AI 글쓰기</strong>로<br>
+                    나를 객관적으로 분해하고 완벽한 내적 피난처를 만드세요.
                 </p>
                 
-                <div class="waitlist-box glass-panel">
-                    <h3>🎁 1챕터 선공개 & 얼리버드 알림 신청</h3>
-                    <p>이메일을 남겨주시면 가장 먼저 1장 '과거편' PDF를 무료로 보내드립니다.</p>
-                    <form id="waitlist-form" class="waitlist-form">
-                        <input type="email" id="email" placeholder="이메일 주소를 입력해주세요" required>
-                        <button type="submit" class="btn-primary">1장 무료로 받기</button>
-                    </form>
-                    <p class="form-footer">* 스팸 메일은 보내지 않습니다.</p>
+                <div style="margin-top: 40px;">
+                    <a href="#lead-capture" style="display:block; text-decoration:none;">
+                        <button class="btn-primary w-100" style="font-size: 1.2rem; padding: 20px;">🎁 1장 '과거 분해' 무료로 먼저 읽어보기</button>
+                    </a>
+                    <p style="text-align: center; color: var(--text-secondary); margin-top: 16px; font-size: 0.9rem;">
+                        이메일만 남기면 가이드북 1장을 즉시 보내드립니다.
+                    </p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="notion_template_mockup.png" alt="디지털 템플릿 모형" id="mockup-img">
+            </div>
+        </section>
+
+        <!-- 2. Pain Points -->
+        <section class="container">
+            <div class="section-title">
+                <h2>이런 고민, <span class="highlight">당신만의 잘못이 아닙니다</span></h2>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3><span>🤔</span> 과생각의 늪</h3>
+                    <p style="color:var(--text-secondary)">꼬리에 꼬리를 무는 생각들로 머릿속이 엉망진창입니다. "왜 나는 이 모양일까?" 밤마다 이불을 찹니다.</p>
+                </div>
+                <div class="pain-card">
+                    <h3><span>💔</span> 도돌이표 인간관계</h3>
+                    <p style="color:var(--text-secondary)">가족, 연애, 친구. 만나는 사람만 다를 뿐 매번 비슷한 갈등으로 끝이 납니다.</p>
+                </div>
+                <div class="pain-card">
+                    <h3><span>🤫</span> 심리상담의 높은 벽</h3>
+                    <p style="color:var(--text-secondary)">누군가에게 내 깊은 치부를 털어놓는 것이 두렵습니다. 챗GPT에 물어봐도 기계적인 대답만 돌아옵니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Mini CTA -->
+        <section class="mini-cta">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 16px; color: var(--text-primary);">원인을 '의지'에서 찾지 마세요.<br><span class="highlight">'뇌과학'</span>으로 해결할 수 있습니다.</h2>
+                <p style="color:var(--text-secondary); margin-bottom: 32px;">지금 바로 1장 '과거 분해'를 무료로 읽고 내면 치유의 첫걸음을 떼보세요.</p>
+                <a href="#lead-capture"><button class="btn-primary">1장 먼저 확인해보기</button></a>
+            </div>
+        </section>
+
+        <!-- 4. Author Trust -->
+        <section class="container">
+            <div class="section-title">
+                <h2>왜 <span class="highlight">윤수훈</span>인가요?</h2>
+                <p style="color:var(--text-secondary)">지식을 실천으로, 실천을 압도적 성과로 증명했습니다.</p>
+            </div>
+            <div class="author-stats">
+                <div class="stat-box glass-panel">
+                    <div class="stat-num">180권</div>
+                    <div style="color:var(--text-secondary)">진화심리학/뇌과학 누적 독서</div>
+                </div>
+                <div class="stat-box glass-panel">
+                    <div class="stat-num">30만</div>
+                    <div style="color:var(--text-secondary)">쓰레드 시작 4일 만의 도달률</div>
+                </div>
+                <div class="stat-box glass-panel">
+                    <div class="stat-num">5년</div>
+                    <div style="color:var(--text-secondary)">단 하루도 빠짐없는 운동 지속 (실행력)</div>
+                </div>
+                <div class="stat-box glass-panel">
+                    <div class="stat-num">70만+</div>
+                    <div style="color:var(--text-secondary)">월 총 도달률 (블로그, 인스타)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Differentiator -->
+        <section class="container">
+            <div class="section-title">
+                <h2>시중의 뻔한 책들과<br><span class="highlight">무엇이 다른가요?</span></h2>
+            </div>
+            <div class="diff-grid">
+                <div class="glass-panel" style="padding: 32px;">
+                    <h3 class="mb-2" style="color: var(--text-primary);">1. 단순 위로가 아닌 '과학적 해부'</h3>
+                    <p style="color:var(--text-secondary)">"다 괜찮아질 거야" 식의 근거 없는 위로를 하지 않습니다. 거울 뉴런, 평판 회로 등 과학적 근거로 내 감정의 원인을 타격합니다.</p>
+                </div>
+                <div class="glass-panel" style="padding: 32px;">
+                    <h3 class="mb-2" style="color: var(--text-primary);">2. 읽기만 하는 책이 아닌 '실천 시스템'</h3>
+                    <p style="color:var(--text-secondary)">눈으로 읽고 끝나는 지식은 증발합니다. 제공되는 노션 워크북 템플릿을 통해 21일간 직접 글을 쓰며 내 것으로 만듭니다.</p>
                 </div>
             </div>
             
-            <div class="hero-image">
-                <img src="notion_template_mockup.png" alt="디지털 템플릿 모형" id="mockup-img">
-                <div class="floating-card glass-panel card-1">
-                    <span class="emoji">🧬</span>
+            <div class="security-alert">
+                <h3 class="mb-2" style="color: var(--accent-color);">🚨 "AI한테 속마음을 쓰면 유출되지 않나요?"</h3>
+                <p class="mb-2" style="color: var(--text-primary);">세상에서 가장 안전한 심리상담실을 구축했습니다. <strong>절대 유출되지 않습니다.</strong></p>
+                <ul style="color:var(--text-secondary); line-height: 1.8; padding-left: 20px;">
+                    <li>✔️ <strong>데이터 학습 방지 세팅법:</strong> AI가 내 기록을 무단 학습하지 못하게 차단합니다.</li>
+                    <li>✔️ <strong>완벽한 역할 분리:</strong> AI는 '질문자' 역할만 합니다. 내밀한 대답은 완전히 격리된 <strong>나만의 프라이빗 노션 워크북</strong>에만 기록합니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. TOC (Curriculum) -->
+        <section class="container">
+            <div class="section-title">
+                <h2>당신을 해독할 <span class="highlight">4주간의 커리큘럼</span></h2>
+                <p style="color:var(--text-secondary)">본편 PDF 180p + 21일 노션 워크북 + 시크릿 프롬프트</p>
+            </div>
+            <div class="toc-list">
+                <div class="toc-item">
+                    <div class="toc-num">01</div>
                     <div>
-                        <strong>진화적 메커니즘</strong>
-                        <span>왜 우리는 남과 비교할까?</span>
+                        <h3 style="font-size:1.3rem; margin-bottom:8px; color: var(--text-primary);">어디서 왔는가 (과거 분해)</h3>
+                        <p style="color:var(--text-secondary)">애착 이론, 부모 투자 이론, 형제 순위와 전두엽 발달의 상관관계</p>
                     </div>
                 </div>
-                <div class="floating-card glass-panel card-2">
-                    <span class="emoji">📝</span>
+                <div class="toc-item">
+                    <div class="toc-num">02</div>
                     <div>
-                        <strong>내적 글쓰기 시스템</strong>
-                        <span>구조화된 노션 템플릿</span>
+                        <h3 style="font-size:1.3rem; margin-bottom:8px; color: var(--text-primary);">지금 어떻게 사는가 (현재 분해)</h3>
+                        <p style="color:var(--text-secondary)">자기검열과 평판 회로, DMN 반추 회로가 만드는 자기비판의 늪</p>
+                    </div>
+                </div>
+                <div class="toc-item">
+                    <div class="toc-num">03</div>
+                    <div>
+                        <h3 style="font-size:1.3rem; margin-bottom:8px; color: var(--text-primary);">누구와 사는가 (관계 분해)</h3>
+                        <p style="color:var(--text-secondary)">친족 갈등의 이유, 연애에서의 페어본딩, 호혜성과 던바의 수</p>
+                    </div>
+                </div>
+                <div class="toc-item">
+                    <div class="toc-num">04</div>
+                    <div>
+                        <h3 style="font-size:1.3rem; margin-bottom:8px; color: var(--text-primary);">어디로 갈 것인가 (통합/재설계)</h3>
+                        <p style="color:var(--text-secondary)">AI 글쓰기 시크릿 프롬프트 실전 적용, 나를 한 문장으로 정의하기</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="features container">
+        <!-- 7. Reviews (Social Proof) -->
+        <section class="container" style="background: rgba(212, 106, 78, 0.02); border-radius: 24px; padding: 60px 24px;">
             <div class="section-title">
-                <h2>단순한 위로가 아닌,<br>과학적 메커니즘과 실천 도구</h2>
+                <h2>사전 리뷰어들의 <span class="highlight">생생한 후기</span></h2>
             </div>
-            <div class="feature-grid">
-                <div class="feature-card glass-panel">
-                    <div class="icon">🔍</div>
-                    <h3>면죄부</h3>
-                    <p>당신이 불안하고, 자책하고, 비교하는 것은 인간성 문제가 아닙니다. 생존을 위한 진화적 설계일 뿐입니다. 그 죄책감부터 덜어냅니다.</p>
+            <div class="review-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p style="line-height: 1.6; color: var(--text-primary);">"상담사에게도 말 못 할 치부를 AI와 분리된 노션에 쓰니까 마음이 너무 편했어요. 제가 왜 매번 나쁜 남자만 만나는지 뇌과학적으로 이해하고 펑펑 울었습니다."</p>
+                    <div style="margin-top: 16px; color:var(--text-secondary); font-size:0.9rem;">- 20대 직장인 K님</div>
                 </div>
-                <div class="feature-card glass-panel">
-                    <div class="icon">🧠</div>
-                    <h3>메커니즘</h3>
-                    <p>내 감정이 왜 이렇게 작동하는지, 스트레스와 편도체가 내 뇌를 어떻게 조종하는지 원리를 파악하여 통제권을 되찾습니다.</p>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p style="line-height: 1.6; color: var(--text-primary);">"자기계발서 백날 읽어도 제자리걸음이었는데, 내 '뇌'가 원래 이렇게 세팅되어 있다는 걸 아니까 자책감이 사라졌어요. 노션 워크북이 정말 유용합니다."</p>
+                    <div style="margin-top: 16px; color:var(--text-secondary); font-size:0.9rem;">- 30대 프리랜서 L님</div>
                 </div>
-                <div class="feature-card glass-panel">
-                    <div class="icon">✍️</div>
-                    <h3>자기수용 (노션 템플릿)</h3>
-                    <p>눈으로 읽고 끝나는 것이 아니라, 체계적으로 구성된 노션 워크북을 통해 나의 과거-현재-관계를 글로 쓰며 완전히 소화합니다.</p>
+            </div>
+        </section>
+
+        <!-- 8. Lead Capture (Main Conversion) -->
+        <section id="lead-capture" class="container">
+            <div class="price-box glass-panel">
+                <div class="badge" style="background: var(--accent-color); color: white; border:none; margin-bottom:24px;">🎁 사전 신청자 한정 혜택</div>
+                <h2 style="font-size: 2.2rem; margin-bottom: 16px; color: var(--text-primary);">1장 '과거 분해' PDF 무료 받기</h2>
+                <p style="color:var(--text-secondary); margin-bottom: 24px; line-height: 1.6;">
+                    이메일을 남겨주시면 가이드북 1장을 즉시 보내드립니다.<br>
+                    <strong>추후 전체 워크북 세트 정식 오픈 시, 사전 신청자분들께만<br><span style="color:var(--accent-color);">가장 저렴한 시크릿 특가 링크</span>를 따로 챙겨드립니다.</strong><br>
+                    (정식 오픈 이후에는 가격이 크게 인상됩니다)
+                </p>
+                
+                <form id="waitlist-form" style="display:flex; flex-direction: column; gap:12px;">
+                    <input type="email" id="email" placeholder="1장 PDF를 받을 이메일 주소를 입력해주세요" required style="padding: 16px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); background: #ffffff; color: var(--text-primary);">
+                    <button type="submit" class="btn-primary" style="width: 100%;">무료로 1장 받아보기</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 9. FAQ -->
+        <section class="container">
+            <div class="section-title">
+                <h2>자주 묻는 질문 <span class="highlight">(FAQ)</span></h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-q"><span>Q.</span> 무료 배포되는 1장에는 어떤 내용이 있나요?</div>
+                    <div class="faq-a">1장 '어디서 왔는가'는 유년 시절의 애착 이론, 부모 투자 이론 등을 다루며, 내 불안의 근원이 어디서 시작되었는지 과학적으로 파악할 수 있는 핵심 내용이 담겨 있습니다.</div>
                 </div>
+                <div class="faq-item">
+                    <div class="faq-q"><span>Q.</span> 글쓰기를 전혀 해본 적 없는 초보도 가능한가요?</div>
+                    <div class="faq-a">네, 가능합니다. 정식 버전에 포함된 빈칸 채우기 방식의 노션 템플릿과 '시크릿 프롬프트'를 활용하면 자연스럽게 글이 완성되도록 설계되어 있습니다.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><span>Q.</span> 정말 AI가 제 데이터를 학습하지 않나요?</div>
+                    <div class="faq-a">물론입니다. 챗GPT의 데이터 제공 거부 설정법을 가장 먼저 알려드리며, 가장 내밀한 개인 사연은 외부와 단절된 '프라이빗 노션 워크북'에만 작성합니다.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><span>Q.</span> 정식 출시는 언제이며, 가격은 얼마인가요?</div>
+                    <div class="faq-a">정식 출시는 몇 주 내로 예정되어 있습니다. 출시 후 가격은 지속적으로 인상될 예정이나, 지금 이메일을 남겨주신 분들께는 출시 시점에 맞춰 '최대 할인율이 적용된 시크릿 결제 링크'를 보내드립니다.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Final CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; margin-bottom: 24px; color: var(--text-primary);">밑져야 본전, <span style="color:var(--accent-color);">일단 무료로 읽어보세요.</span></h2>
+                <p style="color:var(--text-secondary); font-size: 1.2rem; margin-bottom: 40px;">
+                    100권의 자기계발서로도 풀지 못한 당신의 고민.<br>
+                    오늘, 과학과 글쓰기로 그 마침표를 찍어보세요.
+                </p>
+                <a href="#lead-capture">
+                    <button class="btn-primary" style="font-size: 1.5rem; padding: 20px 60px;">1장 선공개본 무료 받기</button>
+                </a>
             </div>
         </section>
     </main>
 
+    <!-- Floating Mobile CTA -->
+    <a href="#lead-capture">
+        <button class="btn-primary floating-button" style="display: none;">1장 무료로 받아보기</button>
+    </a>
+
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Lucemero. All rights reserved.</p>
-            <p class="footer-links">AI가 답 못 주는 인간 질문, 책에서 찾는 중 | 윤산 (shybook033)</p>
+            <p>© 2026 윤수훈. All rights reserved.</p>
+            <p class="footer-links">AI한테 물어도 답 안 나오는 인간 질문, 진화심리학에서 찾다.</p>
         </div>
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // Show floating button when scrolled past hero
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.floating-button');
+            if(window.scrollY > 600) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

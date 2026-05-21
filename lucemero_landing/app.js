@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 form.reset();
                 btn.textContent = originalText;
                 btn.style.backgroundColor = 'var(--accent-color)';
-                alert('신청해주셔서 감사합니다! 8월 정식 출시 전 안내 메일을 보내드릴게요.');
+                alert('신청해주셔서 감사합니다! 입력하신 이메일로 1장 PDF를 곧 보내드릴게요.');
             }, 3000);
         }
     });
